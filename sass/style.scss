@@ -1,0 +1,53 @@
+// @use "settings";
+// @use "abstracts/abstracts";
+// @use "vendors/vendors";
+@use "base/base";
+// @use "components/components";
+// @use "layout/layout";
+// @use "pages/pages";
+// @use "themes/themes";
+
+body {
+  background-color: #151515;
+}
+
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    color: #ffffff;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.44px;
+    text-decoration: none;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+}
