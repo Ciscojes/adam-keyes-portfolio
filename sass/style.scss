@@ -1,7 +1,7 @@
 // @use "settings";
 // @use "abstracts/abstracts";
 // @use "vendors/vendors";
-@use "base/base";
+@use "base/reset";
 // @use "components/components";
 // @use "layout/layout";
 // @use "pages/pages";
@@ -12,22 +12,23 @@ body {
 }
 
 .container {
-  width: 1240px;
+  width: 1110px;
   margin: 0 auto;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .header {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  height: 90px;
-
+  height: 110px;
   display: flex;
   align-items: center;
 
   &__logo {
     color: #ffffff;
-    font-family: "Space Grotesk", sans-serif;
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 32px;
     letter-spacing: -0.44px;
     text-decoration: none;
@@ -40,14 +41,151 @@ body {
   }
 
   &__nav {
+    margin-right: 30px;
+
     ul {
       display: flex;
       align-items: center;
-      gap: 4rem;
-    }
+      gap: 32px;
 
-    li {
-      list-style: none;
+      li {
+        list-style: none;
+      }
     }
+  }
+}
+
+.hero {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  min-height: 610px;
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
+    width: 600px;
+  }
+
+  &__title {
+    width: 709px;
+    font-size: 88px;
+    line-height: 88px;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -2.5px;
+  }
+
+  &__name {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 6px;
+      background-color: #4ee1a0;
+    }
+  }
+
+  &__description {
+    width: 445px;
+    margin-top: 43px;
+    color: #d9d9d9;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  // otra forma de agregar la barra debajo
+
+  &__contact {
+    display: inline-block;
+    margin-top: 66px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4ee1a0;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 2.29px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: 0;
+    top: -110px;
+    right: 0;
+    width: 445px;
+    height: 720px;
+    overflow: hidden;
+    background-color: #242424;
+
+    img {
+      position: absolute;
+      top: 141px;
+      left: 0;
+      width: 445px;
+      max-width: none;
+      filter: grayscale(100%);
+    }
+  }
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "html css javascript"
+    "accessibility react sass";
+  column-gap: 30px;
+  row-gap: 58px;
+  margin-top: 104px;
+  padding-top: 72px;
+  border-top: 1px solid #ffffff;
+
+  &__item--html {
+    grid-area: html;
+  }
+
+  &__item--css {
+    grid-area: css;
+  }
+
+  &__item--javascript {
+    grid-area: javascript;
+  }
+
+  &__item--accessibility {
+    grid-area: accessibility;
+  }
+
+  &__item--react {
+    grid-area: react;
+  }
+
+  &__item--sass {
+    grid-area: sass;
+  }
+
+  &__name {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: -1.5px;
+  }
+
+  &__experience {
+    margin-top: 14px;
+    color: #d9d9d9;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
   }
 }
