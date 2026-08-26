@@ -47,6 +47,7 @@ body {
       display: flex;
       align-items: center;
       gap: 32px;
+      padding: 0;
 
       li {
         list-style: none;
@@ -338,5 +339,499 @@ body {
     font-weight: 500;
     line-height: 28px;
     list-style: none;
+  }
+}
+
+.contact {
+  padding: 84px 0 92px;
+  background-color: #242424;
+  color: #fff;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 445px);
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__target {
+    h2 {
+      margin: 0 0 36px;
+      font-size: 88px;
+      line-height: 1;
+      letter-spacing: -2.5px;
+    }
+
+    p {
+      margin: 0;
+      color: #d9d9d9;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #fff;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0 24px;
+      border: 0;
+      outline: 0;
+      resize: none;
+      background-color: transparent;
+      color: #fff;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 26px;
+      letter-spacing: -0.22px;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+      }
+    }
+
+    input {
+      height: 42px;
+    }
+
+    textarea {
+      height: 106px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  &__submit {
+    align-self: flex-end;
+    padding: 0 0 10px;
+    border: 0;
+    border-bottom: 2px solid #4ee1a0;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 2.29px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: #4ee1a0;
+    }
+  }
+}
+
+.footer {
+  background-color: #242424;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 47px 0 92px;
+    border-top: 1px solid #ffffff;
+  }
+
+  &__logo {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.44px;
+    text-decoration: none;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      line-height: 0;
+    }
+
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+  }
+}
+
+// ========================================
+// Responsive: tablet (Figma 768 px)
+// ========================================
+@media (max-width: 1199px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 60px);
+  }
+
+  .header {
+    height: 90px;
+
+    &__nav {
+      margin-right: 0;
+    }
+  }
+
+  .hero {
+    min-height: 570px;
+
+    &__content {
+      width: 445px;
+      margin-top: 61px;
+    }
+
+    &__title {
+      width: 443px;
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -2.05px;
+    }
+
+    &__name::after {
+      bottom: -2px;
+    }
+
+    &__description {
+      margin-top: 60px;
+    }
+
+    &__contact {
+      margin-top: 34px;
+    }
+
+    &__image {
+      top: -90px;
+      right: -30px;
+      width: 322px;
+      height: 600px;
+
+      img {
+        top: 127px;
+        left: -14px;
+        width: 350px;
+      }
+    }
+  }
+
+  .skills {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "html css"
+      "javascript accessibility"
+      "react sass";
+    column-gap: 7px;
+    row-gap: 52px;
+    margin-top: 0;
+    padding-top: 53px;
+    padding-bottom: 100px;
+  }
+
+  .projects {
+    padding-bottom: 100px;
+
+    &__title {
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -2.05px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 24px;
+      row-gap: 60px;
+      margin-top: 60px;
+    }
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+
+    &__preview {
+      display: contents;
+    }
+
+    &__image {
+      order: 1;
+      aspect-ratio: 342 / 253;
+      object-fit: cover;
+    }
+
+    &__title {
+      order: 2;
+    }
+
+    &__technologies {
+      order: 3;
+    }
+
+    &__links {
+      position: static;
+      order: 4;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
+      margin-top: 20px;
+      background-color: transparent;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .contact {
+    padding: 60px 0 92px;
+
+    &__container {
+      grid-template-columns: 445px;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    &__target {
+      text-align: center;
+
+      h2 {
+        margin-bottom: 20px;
+        font-size: 72px;
+        line-height: 72px;
+        letter-spacing: -2.05px;
+      }
+    }
+  }
+
+  .footer {
+    &__container {
+      padding: 30px 0 40px;
+    }
+  }
+}
+
+// ========================================
+// Responsive: mobile (Figma 375 px)
+// ========================================
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .header {
+    height: 92px;
+
+    &__container {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 20px;
+    }
+
+    &__logo {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.33px;
+    }
+
+    &__nav {
+      margin-top: 20px;
+
+      ul {
+        gap: 25px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .hero {
+    display: block;
+    min-height: 655px;
+    padding-top: 331px;
+
+    &__content {
+      width: 100%;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    &__title {
+      width: 100%;
+      font-size: 40px;
+      line-height: 40px;
+      letter-spacing: -1.14px;
+    }
+
+    &__name::after {
+      bottom: -1px;
+      height: 4px;
+    }
+
+    &__description {
+      width: 100%;
+      margin-top: 24px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &__contact {
+      margin-top: 24px;
+    }
+
+    &__image {
+      top: -92px;
+      right: auto;
+      left: 50%;
+      width: 174px;
+      height: 383px;
+      transform: translateX(-50%);
+      background: linear-gradient(to bottom, transparent, #242424);
+
+      img {
+        top: 141px;
+        left: 0;
+        width: 174px;
+      }
+    }
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "html"
+      "css"
+      "javascript"
+      "accessibility"
+      "react"
+      "sass";
+    gap: 24px;
+    padding: 40px 0;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+
+    &__name {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -1px;
+    }
+
+    &__experience {
+      margin-top: 1px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  .projects {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    &__title {
+      font-size: 40px;
+      line-height: 40px;
+      letter-spacing: -1.14px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "design-portfolio"
+        "elearning-landing"
+        "todo-web-app"
+        "entertainment-web-app"
+        "memory-game"
+        "art-gallery";
+      gap: 40px;
+      margin-top: 40px;
+    }
+  }
+
+  .project-card {
+    &__image {
+      aspect-ratio: 343 / 253;
+    }
+  }
+
+  .contact {
+    padding: 60px 0 87px;
+
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    &__target {
+      h2 {
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -1.14px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  .footer {
+    &__container {
+      flex-direction: column;
+      padding: 39px 0 60px;
+    }
+
+    &__logo {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.33px;
+    }
+
+    &__nav {
+      margin-top: 20px;
+
+      ul {
+        gap: 25px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
