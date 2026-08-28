@@ -1,0 +1,393 @@
+@mixin styles {
+// ========================================
+// Responsive: tablet (Figma 768 px)
+// ========================================
+@media (max-width: 1199px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 60px);
+  }
+
+  .header {
+    height: 90px;
+
+    &__nav {
+      margin-right: 0;
+    }
+  }
+
+  .hero {
+    min-height: 570px;
+
+    &__ring {
+      top: 22px;
+      left: -265px;
+    }
+
+    &__circle {
+      top: 360px;
+      right: 227px;
+    }
+
+    &__content {
+      width: 445px;
+      margin-top: 61px;
+    }
+
+    &__title {
+      width: 443px;
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -2.05px;
+    }
+
+    &__name::after {
+      bottom: -2px;
+    }
+
+    &__description {
+      margin-top: 60px;
+    }
+
+    &__contact {
+      margin-top: 34px;
+    }
+
+    &__image {
+      top: -90px;
+      right: -30px;
+      width: 322px;
+      height: 600px;
+
+      img {
+        top: 127px;
+        left: -14px;
+        width: 350px;
+      }
+    }
+  }
+
+  .skills {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "html css"
+      "javascript accessibility"
+      "react sass";
+    column-gap: 7px;
+    row-gap: 52px;
+    margin-top: 0;
+    padding-top: 53px;
+    padding-bottom: 100px;
+
+    &__ring {
+      right: -390px;
+      top: auto;
+      bottom: -39px;
+    }
+  }
+
+  .projects {
+    padding-bottom: 100px;
+
+    &__title {
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -2.05px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 24px;
+      row-gap: 60px;
+      margin-top: 60px;
+    }
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+
+    &__preview {
+      display: contents;
+    }
+
+    &__image {
+      order: 1;
+      aspect-ratio: 342 / 253;
+      object-fit: cover;
+    }
+
+    &__title {
+      order: 2;
+    }
+
+    &__technologies {
+      order: 3;
+    }
+
+    &__links {
+      position: static;
+      order: 4;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
+      margin-top: 20px;
+      background-color: transparent;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .contact {
+    padding: 60px 0 92px;
+
+    &__ring {
+      left: -368px;
+      top: auto;
+      bottom: 81px;
+    }
+
+    &__container {
+      grid-template-columns: 445px;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    &__target {
+      text-align: center;
+
+      h2 {
+        margin-bottom: 20px;
+        font-size: 72px;
+        line-height: 72px;
+        letter-spacing: -2.05px;
+      }
+    }
+  }
+
+  .footer {
+    &__container {
+      padding: 30px 0 40px;
+    }
+  }
+}
+
+// ========================================
+// Responsive: mobile (Figma 375 px)
+// ========================================
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .header {
+    height: 92px;
+
+    &__container {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 20px;
+    }
+
+    &__logo {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.33px;
+    }
+
+    &__nav {
+      margin-top: 20px;
+
+      ul {
+        gap: 25px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .hero {
+    display: block;
+    min-height: 655px;
+    padding-top: 331px;
+
+    &__ring {
+      top: 34px;
+      left: -360px;
+    }
+
+    &__circle {
+      display: none;
+    }
+
+    &__content {
+      width: 100%;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    &__title {
+      width: 100%;
+      font-size: 40px;
+      line-height: 40px;
+      letter-spacing: -1.14px;
+    }
+
+    &__name::after {
+      bottom: -1px;
+      height: 4px;
+    }
+
+    &__description {
+      width: 100%;
+      margin-top: 24px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &__contact {
+      margin-top: 24px;
+    }
+
+    &__image {
+      top: -92px;
+      right: auto;
+      left: 50%;
+      width: 174px;
+      height: 383px;
+      transform: translateX(-50%);
+      background: linear-gradient(to bottom, transparent, #242424);
+
+      img {
+        top: 141px;
+        left: 0;
+        width: 174px;
+      }
+    }
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "html"
+      "css"
+      "javascript"
+      "accessibility"
+      "react"
+      "sass";
+    gap: 24px;
+    padding: 40px 0;
+    border-bottom: 1px solid #ffffff;
+    text-align: center;
+
+    &__ring {
+      right: -360px;
+      top: auto;
+      bottom: -39px;
+    }
+
+    &__name {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -1px;
+    }
+
+    &__experience {
+      margin-top: 1px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  .projects {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    &__title {
+      font-size: 40px;
+      line-height: 40px;
+      letter-spacing: -1.14px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "design-portfolio"
+        "elearning-landing"
+        "todo-web-app"
+        "entertainment-web-app"
+        "memory-game"
+        "art-gallery";
+      gap: 40px;
+      margin-top: 40px;
+    }
+  }
+
+  .project-card {
+    &__image {
+      aspect-ratio: 343 / 253;
+    }
+  }
+
+  .contact {
+    padding: 60px 0 87px;
+
+    &__ring {
+      left: -343px;
+      top: auto;
+      bottom: 220px;
+    }
+
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    &__target {
+      h2 {
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -1.14px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  .footer {
+    &__container {
+      flex-direction: column;
+      padding: 39px 0 60px;
+    }
+
+    &__logo {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.33px;
+    }
+
+    &__nav {
+      margin-top: 20px;
+
+      ul {
+        gap: 25px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+}
